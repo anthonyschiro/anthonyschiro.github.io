@@ -85,8 +85,8 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <h1>I build game systems in C#.</h1>
-      <p><strong>Gameplay programmer in training.</strong> I’m a computer science student who works on the systems underneath a game: building and crafting, saving and loading, input, and the UI that ties them together.</p>
+      <h2>I build game systems in C#.</h2>
+      <p><strong>I am Anthony Schiro.</strong> I’m a Game Design & Development student who works on the systems underneath a game: building and crafting, saving and loading, input, and the UI that ties them together.</p>
       <ul class="stack" aria-label="Technologies">
         <li>C#</li><li>Unity</li><li>Java</li><li>OpenGL</li><li>JavaScript</li><li>React</li><li>Git</li>
       </ul>
@@ -107,14 +107,14 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 
       <div class="cols">
         <div>
-          <h3>Saving as a set of small contracts</h3>
-          <p><code>SaveSystem</code> is a static class that writes one JSON file per slot to <code>Application.persistentDataPath</code> using <code>JsonUtility</code>. Each component exposes <code>Save(ref data)</code> and <code>Load(data)</code>, and the save system just aggregates them: player, fuel tube, game manager, world items, machines, platforms, quests and navigation. <span class="todo">TODO: say why you chose this shape over alternatives.</span></p>
+          <h3>Automation</h3>
+          <p>As players progress, their factory grows and automation becomes imporrtant. Teleporter nodes lets players connect machines to each other, automatically sending items from to the other, creating an interconnected system of machines</p>
 
-          <h3>Tracking down bugs</h3>
-          <p>Saved platforms were loading tiny and wrongly rotated. The cause was <code>GridSystem</code> instantiating a different prefab from the one used in the scene, so I pointed it at the right prefab and made the placement ghost match the real placement. Another bug, in mission generation, traced back to asset configuration flags and the order in which <code>ProgressData</code> was reset.</p>
+          <h3>Save System</h3>
+          <p>Has a well functioning Save System that save game information using JSON files. Allows the user to have multiple saves for multiple playthroughs.</p>
 
           <h3>Player-facing systems</h3>
-          <p>Crafting slot conflict resolution, a buy/sell shop with search support, mission cards, machine highlighting using emission through <code>MaterialPropertyBlock</code>, automate-mode overlays, a three-slot save menu and a settings menu.</p>
+          <p>A buy/sell shop with search support, mission cards, automate-mode overlays, a three-slot save menu and a settings menu.</p>
         </div>
 
         <aside>
@@ -152,7 +152,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
           <p>MongoDB holds stops, lines and trips. Lines are made of segments (<code>from</code>, <code>to</code>, <code>duration_minutes</code>), and every trip runs the full line, so pricing can be worked out per segment. A trip carries its passengers, each with a start stop, end stop and current price.</p>
 
           <h3>Front end</h3>
-          <p>React with Vite, built mobile-first from our Figma mockups, using React Router for the Trips and Search pages.</p>
+          <p>React with Vite, built mobile-first from our Figma mockups, using React Router for the Trips and Search pages. Users can search for trips as well as create trips of their own.</p>
 
           <h3>Working with a client</h3>
           <p>We presented the system architecture to the client using front-end/API diagrams and DFD and C4 diagrams. Our team had gaps in React, Node and Express, so we worked through Full Stack Open together to close them.</p>
@@ -169,11 +169,6 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
             <dd>React, Vite, React Router, Node.js, Express, Mongoose, MongoDB</dd>
           </dl>
         </aside>
-      </div>
-
-      <div class="media">
-        <video src="media/wilba-app2.mp4" autoplay muted loop playsinline
-       aria-label="Creating a trip"></video>
       </div>
     </section>
 
