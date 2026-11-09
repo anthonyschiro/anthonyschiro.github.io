@@ -61,9 +61,6 @@ aside dd{margin:.15rem 0 0;color:var(--muted)}
 aside dd a{color:var(--link)}
 code{font:0.92em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--panel);padding:.05em .3em;border-radius:3px}
 
-#about,#contact{padding:clamp(3rem,7vw,5rem) 0}
-#about h2,#contact h2{font:700 1.8rem var(--display);margin:0 0 1rem}
-#about p{max-width:40rem;margin:0 0 1rem}
 footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 
 @media (max-width:760px){
@@ -80,7 +77,6 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
     <nav aria-label="Sections">
       <a href="#factory-game">Factory game</a>
       <a href="#transport-app">Transport app</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -90,7 +86,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
   <div class="hero">
     <div class="wrap">
       <h1>I build game systems in C#.</h1>
-      <p><strong>Gameplay programmer in training.</strong> I’m a computer science student who works on the systems underneath a game: building and crafting, saving and loading, input, and the UI that ties them together. I care about why a pattern works, not only that it does.</p>
+      <p><strong>Gameplay programmer in training.</strong> I’m a computer science student who works on the systems underneath a game: building and crafting, saving and loading, input, and the UI that ties them together.</p>
       <ul class="stack" aria-label="Technologies">
         <li>C#</li><li>Unity</li><li>Java</li><li>OpenGL</li><li>JavaScript</li><li>React</li><li>Git</li>
       </ul>
@@ -111,12 +107,6 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
 
       <div class="cols">
         <div>
-          <h3>Architecture</h3>
-          <p>A <code>GameManager</code> singleton coordinates the run. A <code>GridSystem</code> owns platforms and everything placed on them. A <code>FuelTube</code> system handles fuel. A static <code>SaveSystem</code> gathers each component’s state and writes it to disk. Input runs through Unity’s Input System with separate <code>Player</code> and <code>BuildMode</code> action maps, and the camera is a third-person orbit that sphere-casts so it never clips into walls.</p>
-
-          <h3>Placement previews without side effects</h3>
-          <p>The build-mode preview is a real instance of the prefab, so its <code>Awake</code> would normally register it with game systems before the player has placed anything. I added an <code>isGhost</code> flag that those <code>Awake</code> paths check, so a ghost can render, snap and highlight without touching game state. <span class="todo">TODO: add one sentence on what went wrong before the flag.</span></p>
-
           <h3>Saving as a set of small contracts</h3>
           <p><code>SaveSystem</code> is a static class that writes one JSON file per slot to <code>Application.persistentDataPath</code> using <code>JsonUtility</code>. Each component exposes <code>Save(ref data)</code> and <code>Load(data)</code>, and the save system just aggregates them: player, fuel tube, game manager, world items, machines, platforms, quests and navigation. <span class="todo">TODO: say why you chose this shape over alternatives.</span></p>
 
@@ -124,17 +114,20 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
           <p>Saved platforms were loading tiny and wrongly rotated. The cause was <code>GridSystem</code> instantiating a different prefab from the one used in the scene, so I pointed it at the right prefab and made the placement ghost match the real placement. Another bug, in mission generation, traced back to asset configuration flags and the order in which <code>ProgressData</code> was reset.</p>
 
           <h3>Player-facing systems</h3>
-          <p>Crafting slot conflict resolution, a buy/sell shop with search and controller support, mission cards, machine highlighting using emission through <code>MaterialPropertyBlock</code>, automate-mode overlays, a three-slot save menu and a settings menu.</p>
+          <p>Crafting slot conflict resolution, a buy/sell shop with search support, mission cards, machine highlighting using emission through <code>MaterialPropertyBlock</code>, automate-mode overlays, a three-slot save menu and a settings menu.</p>
         </div>
 
         <aside>
           <dl>
             <dt>My role</dt>
-            <dd><span class="todo">TODO: solo or team? List what you personally built.</span></dd>
+            <dd><span class="todo">Programming:</span></dd>
+            <dd><span class="todo">Automation</span></dd>
+            <dd><span class="todo">Save System</span></dd>
+            <dd><span class="todo">Playtesting</span></dd>
             <dt>Built with</dt>
             <dd>Unity, C#, Unity Input System, JsonUtility</dd>
             <dt>Links</dt>
-            <dd><a href="#">Playable build (itch.io)</a></dd>
+            <dd><a href="https://blaze4444.itch.io/the-lost-recipes">Playable build (itch.io)</a></dd>
           </dl>
         </aside>
       </div>
@@ -167,7 +160,10 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
         <aside>
           <dl>
             <dt>My role</dt>
-            <dd><span class="todo">TODO: which parts did you own (pooling logic, search page, schema)?</span></dd>
+            <dd><span class="todo">Programming:</span></dd>
+            <dd><span class="todo">Implementing Figma designs</span></dd>
+            <dd><span class="todo">Implementing Backend</span></dd>
+            <dd><span class="todo">Implementing Dynamic Pricing and Pooling</span></dd>
             <dt>Built with</dt>
             <dd>React, Vite, React Router, Node.js, Express, Mongoose, MongoDB</dd>
           </dl>
