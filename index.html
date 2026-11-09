@@ -149,10 +149,10 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
           <p>Passengers commit a maximum price they’re willing to pay. Each segment of a line has a capacity of 10, and its cost is split among the people riding that segment, so the price falls as more people join. A trip is confirmed once the price reaches what passengers have committed. A passenger can reopen a pooled trip later and change their maximum.</p>
 
           <h3>Data model</h3>
-          <p>MongoDB holds stops, lines and trips. Lines are made of segments (<code>from</code>, <code>to</code>, <code>duration_minutes</code>), and every trip runs the full line, so pricing can be worked out per segment. A trip carries its passengers, each with a start stop, end stop and current price. Confirmed or pooling is derived from that data rather than stored as a status field, which keeps the search page and booked-trips page consistent with each other.</p>
+          <p>MongoDB holds stops, lines and trips. Lines are made of segments (<code>from</code>, <code>to</code>, <code>duration_minutes</code>), and every trip runs the full line, so pricing can be worked out per segment. A trip carries its passengers, each with a start stop, end stop and current price.</p>
 
           <h3>Front end</h3>
-          <p>React with Vite, built mobile-first from our Figma mockups, using React Router for the Trips and Search pages. Search results look different for confirmed and pooling trips, and both lead to the pooling page. After client feedback on our documentation, we added PWA features for a more native feel.</p>
+          <p>React with Vite, built mobile-first from our Figma mockups, using React Router for the Trips and Search pages.</p>
 
           <h3>Working with a client</h3>
           <p>We presented the system architecture to the client using front-end/API diagrams and DFD and C4 diagrams. Our team had gaps in React, Node and Express, so we worked through Full Stack Open together to close them.</p>
@@ -169,6 +169,11 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
             <dd>React, Vite, React Router, Node.js, Express, Mongoose, MongoDB</dd>
           </dl>
         </aside>
+      </div>
+
+      <div class="media">
+        <video src="media/wilba-app2.mp4" autoplay muted loop playsinline
+       aria-label="Creating a trip"></video>
       </div>
     </section>
 
