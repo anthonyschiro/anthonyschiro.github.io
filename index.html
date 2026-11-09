@@ -149,11 +149,11 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
           <h3>The pooling idea</h3>
           <p>Passengers commit a maximum price they’re willing to pay. Each segment of a line has a capacity of 10, and its cost is split among the people riding that segment, so the price falls as more people join. A trip is confirmed once the price reaches what passengers have committed. A passenger can reopen a pooled trip later and change their maximum.</p>
 
-          <h3>Data model</h3>
-          <p>MongoDB holds stops, lines and trips. Lines are made of segments (<code>from</code>, <code>to</code>, <code>duration_minutes</code>), and every trip runs the full line, so pricing can be worked out per segment. A trip carries its passengers, each with a start stop, end stop and current price.</p>
-
           <h3>Front end</h3>
           <p>React with Vite, built mobile-first from our Figma mockups, using React Router for the Trips and Search pages. Users can search for trips as well as create trips of their own.</p>
+
+          <h3>Backend</h3>
+          <p>The app uses a mock database (MongoDB) to hold stops, lines and trips. Lines are made of segments (<code>from</code>, <code>to</code>, <code>duration_minutes</code>), and every trip runs the full line, so pricing can be worked out per segment. A trip carries its passengers, each with a start stop, end stop and current price allowing. From this the app calulcates the fare for the passengers with the pricing equally shared between each passenger for each segment.</p>
 
           <h3>Working with a client</h3>
           <p>We presented the system architecture to the client using front-end/API diagrams and DFD and C4 diagrams. Our team had gaps in React, Node and Express, so we worked through Full Stack Open together to close them.</p>
@@ -176,7 +176,7 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <p><a href="mailto:anthonyschiro@outlook.com.au">anthonyschiro@outlook.com.au</a> . 
-      <a href="#">GitHub</a> <span class="todo">TODO</span> · <a href="#">CV (PDF)</a> <span class="todo">TODO</span></p>
+      <a href="https://github.com/anthonyschiro">GitHub</a> · <a href="#">CV (PDF)</a></p>
     </section>
   </div>
 </main>
