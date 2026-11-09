@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthony [Surname] – Gameplay Programmer</title>
+<!-- Search this file for "TODO" (yellow highlights) to find everything you need to fill in. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E8ECEF; --panel:#F7F9FA; --ink:#17222C; --muted:#52606C;
+  --line:#C3CCD3; --signal:#F2B705; --link:#0B5CAD;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#11181E; --panel:#18222A; --ink:#E7EDF1; --muted:#9AA8B3; --line:#2C3943; --link:#6FB1F0;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+.todo{background:var(--signal);color:#17222C;padding:0 .25em;border-radius:2px}
+
+header.top{padding:1.25rem 0}
+header.top .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.mark{font:700 1.1rem var(--display);text-decoration:none;color:var(--ink)}
+nav a{margin-left:1.25rem;color:var(--ink)}
+
+.hero{padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.5rem,6vw,4rem)}
+.hero h1{font:700 clamp(2.6rem,8.5vw,6rem)/.98 var(--display);letter-spacing:-.03em;margin:0 0 1.5rem;max-width:12ch}
+.hero p{font-size:1.25rem;max-width:38rem;margin:0 0 1.5rem;color:var(--muted)}
+.hero p strong{color:var(--ink);font-weight:600}
+.stack{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}
+.stack li{border:1.5px solid var(--ink);padding:.15rem .7rem;border-radius:999px;font-size:.95rem}
+
+/* the one memorable thing: a belt with items, a nod to the factory game */
+.belt{height:30px;border-block:2px solid var(--ink);position:relative;overflow:hidden;
+  background:repeating-linear-gradient(90deg,var(--line) 0 2px,transparent 2px 22px)}
+.belt i{position:absolute;top:6px;width:14px;height:14px;background:var(--signal);border:2px solid var(--ink)}
+
+section.project{padding:clamp(3rem,7vw,5rem) 0;border-bottom:1px solid var(--line)}
+section.project h2{font:700 clamp(1.9rem,4.5vw,2.8rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 .75rem}
+.lede{font-size:1.2rem;max-width:42rem;margin:0 0 2rem}
+.media{aspect-ratio:16/9;border:2px dashed var(--muted);background:var(--panel);display:grid;place-items:center;
+  text-align:center;padding:1.5rem;color:var(--muted);margin:0 0 2.5rem}
+.media img,.media video{width:100%;height:100%;object-fit:cover;display:block}
+.cols{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+.cols h3{font:600 1.2rem var(--display);margin:2rem 0 .35rem}
+.cols h3:first-child{margin-top:0}
+.cols p{margin:0 0 .5rem;max-width:40rem}
+aside{border-left:3px solid var(--signal);padding-left:1.25rem}
+aside dl{margin:0}
+aside dt{font-weight:600;margin-top:1.1rem}
+aside dt:first-child{margin-top:0}
+aside dd{margin:.15rem 0 0;color:var(--muted)}
+aside dd a{color:var(--link)}
+code{font:0.92em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--panel);padding:.05em .3em;border-radius:3px}
+
+#about,#contact{padding:clamp(3rem,7vw,5rem) 0}
+#about h2,#contact h2{font:700 1.8rem var(--display);margin:0 0 1rem}
+#about p{max-width:40rem;margin:0 0 1rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+
+@media (max-width:760px){
+  .cols{grid-template-columns:1fr}
+  nav a:first-child{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Anthony Schiro</a>
+    <nav aria-label="Sections">
+      <a href="#factory-game">Factory game</a>
+      <a href="#transport-app">Transport app</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>I build game systems in C#.</h1>
+      <p><strong>Gameplay programmer in training.</strong> I’m a computer science student who works on the systems underneath a game: building and crafting, saving and loading, input, and the UI that ties them together. I care about why a pattern works, not only that it does.</p>
+      <ul class="stack" aria-label="Technologies">
+        <li>C#</li><li>Unity</li><li>Java</li><li>OpenGL</li><li>JavaScript</li><li>React</li><li>Git</li>
+      </ul>
+    </div>
+  </div>
+  <div class="belt" aria-hidden="true"><i style="left:11%"></i><i style="left:38%"></i><i style="left:64%"></i><i style="left:87%"></i></div>
+
+  <div class="wrap">
+
+    <!-- ===== PROJECT 1 ===== -->
+    <section class="project" id="factory-game" aria-labelledby="fg-title">
+      <h2 id="fg-title">The Lost Recipes</h2>
+      <p class="lede">A Unity farming and automation game where the player builds machines, links them with teleporter nodes, crafts items and completes missions.</p>
+
+      <div class="media">
+        <p><span class="todo">TODO</span> Replace this box with a GIF or video of build mode placing a machine and conveyor.<br>Use <code>&lt;img src="media/factory.gif" alt="…"&gt;</code> or <code>&lt;video&gt;</code> inside <code>.media</code>.</p>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3>Architecture</h3>
+          <p>A <code>GameManager</code> singleton coordinates the run. A <code>GridSystem</code> owns platforms and everything placed on them. A <code>FuelTube</code> system handles fuel. A static <code>SaveSystem</code> gathers each component’s state and writes it to disk. Input runs through Unity’s Input System with separate <code>Player</code> and <code>BuildMode</code> action maps, and the camera is a third-person orbit that sphere-casts so it never clips into walls.</p>
+
+          <h3>Placement previews without side effects</h3>
+          <p>The build-mode preview is a real instance of the prefab, so its <code>Awake</code> would normally register it with game systems before the player has placed anything. I added an <code>isGhost</code> flag that those <code>Awake</code> paths check, so a ghost can render, snap and highlight without touching game state. <span class="todo">TODO: add one sentence on what went wrong before the flag.</span></p>
+
+          <h3>Saving as a set of small contracts</h3>
+          <p><code>SaveSystem</code> is a static class that writes one JSON file per slot to <code>Application.persistentDataPath</code> using <code>JsonUtility</code>. Each component exposes <code>Save(ref data)</code> and <code>Load(data)</code>, and the save system just aggregates them: player, fuel tube, game manager, world items, machines, platforms, quests and navigation. <span class="todo">TODO: say why you chose this shape over alternatives.</span></p>
+
+          <h3>Tracking down bugs</h3>
+          <p>Saved platforms were loading tiny and wrongly rotated. The cause was <code>GridSystem</code> instantiating a different prefab from the one used in the scene, so I pointed it at the right prefab and made the placement ghost match the real placement. Another bug, in mission generation, traced back to asset configuration flags and the order in which <code>ProgressData</code> was reset.</p>
+
+          <h3>Player-facing systems</h3>
+          <p>Crafting slot conflict resolution, a buy/sell shop with search and controller support, mission cards, machine highlighting using emission through <code>MaterialPropertyBlock</code>, automate-mode overlays, a three-slot save menu and a settings menu.</p>
+        </div>
+
+        <aside>
+          <dl>
+            <dt>My role</dt>
+            <dd><span class="todo">TODO: solo or team? List what you personally built.</span></dd>
+            <dt>Built with</dt>
+            <dd>Unity, C#, Unity Input System, JsonUtility</dd>
+            <dt>Links</dt>
+            <dd><a href="#">Playable build (itch.io)</a></dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== PROJECT 2 ===== -->
+    <section class="project" id="transport-app" aria-labelledby="ta-title">
+      <h2 id="ta-title">Wilba Metrobus App</h2>
+      <p class="lede">A mobile-first web app that lets rural passengers pool onto bus trips, where the fare drops as more people commit.</p>
+
+      <div class="media">
+        <p><span class="todo">TODO</span> Replace this box with a screen recording of searching a trip and committing to a pooled fare.</p>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3>The pooling idea</h3>
+          <p>Passengers commit a maximum price they’re willing to pay. Each segment of a line has a capacity of 10, and its cost is split among the people riding that segment, so the price falls as more people join. A trip is confirmed once the price reaches what passengers have committed. A passenger can reopen a pooled trip later and change their maximum.</p>
+
+          <h3>Data model</h3>
+          <p>MongoDB holds stops, lines and trips. Lines are made of segments (<code>from</code>, <code>to</code>, <code>duration_minutes</code>), and every trip runs the full line, so pricing can be worked out per segment. A trip carries its passengers, each with a start stop, end stop and current price. Confirmed or pooling is derived from that data rather than stored as a status field, which keeps the search page and booked-trips page consistent with each other.</p>
+
+          <h3>Front end</h3>
+          <p>React with Vite, built mobile-first from our Figma mockups, using React Router for the Trips and Search pages. Search results look different for confirmed and pooling trips, and both lead to the pooling page. After client feedback on our documentation, we added PWA features for a more native feel.</p>
+
+          <h3>Working with a client</h3>
+          <p>We presented the system architecture to the client using front-end/API diagrams and DFD and C4 diagrams. Our team had gaps in React, Node and Express, so we worked through Full Stack Open together to close them.</p>
+        </div>
+
+        <aside>
+          <dl>
+            <dt>My role</dt>
+            <dd><span class="todo">TODO: which parts did you own (pooling logic, search page, schema)?</span></dd>
+            <dt>Built with</dt>
+            <dd>React, Vite, React Router, Node.js, Express, Mongoose, MongoDB</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p><a href="mailto:anthonyschiro@outlook.com.au">anthonyschiro@outlook.com.au</a>
+      <a href="#">GitHub</a> <span class="todo">TODO</span> · <a href="#">CV (PDF)</a> <span class="todo">TODO</span></p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Anthony Schiro</div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
